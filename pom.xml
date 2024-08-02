@@ -12,6 +12,7 @@
     <modules>
         <module>smsender</module>
         <module>smconsumer</module>
+        <module>smbackoffice</module>
     </modules>
 
     <dependencyManagement>

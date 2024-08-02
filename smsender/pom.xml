@@ -6,7 +6,7 @@
 		<groupId>org.example</groupId>
 		<artifactId>messageproject</artifactId>
 		<version>1.0-SNAPSHOT</version>
-		<relativePath>../pom.xml</relativePath> <!-- Caminho relativo ao pom.xml do projeto pai -->
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<artifactId>smsender</artifactId>
