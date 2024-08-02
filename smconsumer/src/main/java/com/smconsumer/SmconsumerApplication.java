@@ -8,6 +8,8 @@ public class SmconsumerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SmconsumerApplication.class, args);
+		System.out.println("SMCONSUMER OK");
+
 	}
 
 }

@@ -10,6 +10,6 @@ public class SmsenderApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SmsenderApplication.class, args);
+		System.out.println("SMSENDER OK");
 	}
-
 }
