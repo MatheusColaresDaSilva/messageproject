@@ -1,26 +1,27 @@
 package com.smbackoffice.controller;
 
-import com.smbackoffice.dto.request.WithdrawRequestDTO;
+import com.smbackoffice.dto.request.DeductionRequestDTO;
 import com.smbackoffice.dto.response.WithdrawResponseDTO;
-import com.smbackoffice.service.RequestMessageService;
+import com.smbackoffice.service.RequestDeductionAcconuntClientService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/withdraw")
+@RequestMapping("/api/v1/deduction")
 public class MessageRecieverController extends BaseController {
 
-    private RequestMessageService messageService;
+    private RequestDeductionAcconuntClientService messageService;
 
-    public MessageRecieverController(RequestMessageService messageService) {
+    public MessageRecieverController(RequestDeductionAcconuntClientService messageService) {
         this.messageService = messageService;
     }
 
     @PostMapping
-    public WithdrawResponseDTO evaluateRequestMessage(@RequestBody WithdrawRequestDTO withdrawRequestDTO) {
-        //MessageResponseDTO response = messageService.createNewMessage(messageRequestDTO);
+    public WithdrawResponseDTO evaluateRequestMessage(@RequestBody @Valid DeductionRequestDTO withdrawRequestDTO) {
+        messageService.deductionAccount(withdrawRequestDTO);
         System.out.println("testing");
         return new WithdrawResponseDTO();
     }

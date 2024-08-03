@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Account {
+public abstract class Account implements AccountVerification {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

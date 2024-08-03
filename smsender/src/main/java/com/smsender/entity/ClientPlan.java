@@ -13,7 +13,7 @@ public class ClientPlan {
     @EmbeddedId
     private ClientPlanId id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "account_id", referencedColumnName = "id")
     private Account account;
 }

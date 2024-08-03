@@ -9,11 +9,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
+
 @Entity
 @Table(name = "CLIENT")
 @NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Client extends BaseEntity {
 
     @Column(length = 200, nullable = false)

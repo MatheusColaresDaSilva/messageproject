@@ -10,7 +10,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Builder
 public class PayloadSmSenderDTO implements Serializable {
-    private Long idClient;
-    private Long idPlan;
+    private Long idAccount;
     private Long idMessage;
 }

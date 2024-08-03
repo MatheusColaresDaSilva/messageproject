@@ -14,4 +14,8 @@ public class AccountPre extends Account {
 
     @Column(nullable = false)
     private Long creditValue;
+
+    public Long deductValue(Long value) {
+        return this.creditValue - value;
+    }
 }

@@ -8,11 +8,9 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class WithdrawRequestDTO {
-    @NotNull(message = "Must have a client id")
-    private Long idClient;
-    @NotNull(message = "Must have a plan id")
-    private Long idPlan;
+public class DeductionRequestDTO {
+    @NotNull(message = "Must have a account id")
+    private Long idAccount;
     @NotNull(message = "Must have a message id")
     private Long idMessage;
 }

@@ -7,13 +7,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.EnumType;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "MESSAGE")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Message extends BaseEntity {
 
     @Column(length = 200, nullable = false)
