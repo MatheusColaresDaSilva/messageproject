@@ -10,7 +10,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Initialzer implements ApplicationRunner {
 
     private AccountRepository accountRepository;
@@ -28,7 +28,7 @@ public class Initialzer implements ApplicationRunner {
         AccountPos account1 = new AccountPos();
         account1.setId(1L);
         account1.setAccountNumber(123456L);
-        account1.setMaximumValue(27L);
+        account1.setMaximumValue(27.0);
 
         accountRepository.save(account1);
 
@@ -40,7 +40,7 @@ public class Initialzer implements ApplicationRunner {
         AccountPre account2 = new AccountPre();
         account2.setId(1L);
         account2.setAccountNumber(123456L);
-        account2.setCreditValue(26L);
+        account2.setCreditValue(26.0);
         accountRepository.save(account2);
 
     }

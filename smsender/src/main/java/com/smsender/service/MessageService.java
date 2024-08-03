@@ -52,12 +52,9 @@ public class MessageService {
 
     @Transactional
     public MessageResponseDTO createNewMessage(MessageRequestDTO messageRequestDTO) {
-
         //TODO VALIDATIONS
-
         final Message message = messageDtoToEntity(messageRequestDTO);
         return addMessageInTheQueue(messageRequestDTO, message);
-
     }
 
     @Transactional

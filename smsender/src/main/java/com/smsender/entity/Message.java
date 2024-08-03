@@ -27,7 +27,7 @@ public class Message extends BaseEntity {
     private Integer recipientPhoneNumber;
 
     @Column
-    private Boolean isWhats;
+    private Boolean isWhats = Boolean.FALSE;
 
     @Enumerated(EnumType.STRING)
     @Column(length = 1)

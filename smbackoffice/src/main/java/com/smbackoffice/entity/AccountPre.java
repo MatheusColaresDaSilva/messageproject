@@ -13,9 +13,7 @@ import lombok.Setter;
 public class AccountPre extends Account {
 
     @Column(nullable = false)
-    private Long creditValue;
+    private Double creditValue;
 
-    public Long deductValue(Long value) {
-        return this.creditValue - value;
-    }
+
 }

@@ -1,8 +1,7 @@
 package com.smbackoffice.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import com.smbackoffice.enums.StatusType;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,7 +18,10 @@ public class Message extends BaseEntity {
     private Integer recipientPhoneNumber;
 
     @Column
-    private Boolean isWhats;
+    private Boolean isWhats = Boolean.FALSE;
 
+    @Enumerated(EnumType.STRING)
+    @Column(length = 1)
+    private StatusType status;
 
 }

@@ -10,6 +10,7 @@ public class SmbackofficeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SmbackofficeApplication.class, args);
+		System.out.println("SMBACKOFFICE OK");
 	}
 
 }

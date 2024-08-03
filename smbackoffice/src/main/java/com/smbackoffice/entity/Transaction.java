@@ -10,15 +10,12 @@ import lombok.Setter;
 @Table(name = "TRANSACTION")
 public class Transaction extends BaseEntity {
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "account_id", referencedColumnName = "id")
     private Account account;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "message_id", referencedColumnName = "id")
     private Message message;
-
-    @Column(nullable = false)
-    private Long messageCost;
 
 }

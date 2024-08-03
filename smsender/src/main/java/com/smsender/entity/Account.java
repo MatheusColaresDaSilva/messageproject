@@ -28,5 +28,6 @@ public abstract class Account implements AccountActions {
 
     private Long generateNextAccountNumber() {
         return new Random().nextLong(1000L, 99999L);
+        //TODO provide a sequence on liquibase to genetare this account number
     }
 }
