@@ -18,16 +18,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class MessageRecieverController extends BaseController {
     private static final Logger logger = LoggerFactory.getLogger(MessageRecieverController.class);
 
-    private RequestDeductionAcconuntClientService messageService;
+    private RequestDeductionAcconuntClientService requestDeductionAcconuntClientService;
 
     public MessageRecieverController(RequestDeductionAcconuntClientService messageService) {
-        this.messageService = messageService;
+        this.requestDeductionAcconuntClientService = messageService;
     }
 
     @PostMapping
     public ResponseEntity<String> deductAccount(@RequestBody @Valid DeductionRequestDTO deductionRequestDTO) {
         try {
-            messageService.deductionAccount(deductionRequestDTO);
+            requestDeductionAcconuntClientService.deductionAccount(deductionRequestDTO);
             return ResponseEntity.ok("OK");
         } catch (MessageNotFoundException e) {
             logger.error("Failed to deduct account: ", e);

@@ -14,17 +14,17 @@ public class PosDeductStrategy implements AccountDeductionStrategy {
             throw new IllegalArgumentException("Invalid account type");
         }
 
-        AccountPos accountPre = (AccountPos) account;
-        if (value == null || accountPre.getCurrentValue() == null) {
+        AccountPos accountPos = (AccountPos) account;
+        if (value == null || accountPos.getCurrentValue() == null) {
             throw new IllegalArgumentException("Value cannot be null.");
         }
 
-        Double newValue = accountPre.getCurrentValue() + value;
-        if (newValue > accountPre.getMaximumValue()) {
+        Double newValue = accountPos.getCurrentValue() + value;
+        if (newValue > accountPos.getMaximumValue()) {
             throw new InsufficientFundsException("Impossible action, you pass the limit maximum to sending message.");
         }
 
-        accountPre.setCurrentValue(newValue);
+        accountPos.setCurrentValue(newValue);
         return newValue;
     }
 }

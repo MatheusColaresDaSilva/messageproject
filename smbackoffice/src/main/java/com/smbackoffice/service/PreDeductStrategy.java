@@ -3,7 +3,6 @@ package com.smbackoffice.service;
 import com.smbackoffice.entity.Account;
 import com.smbackoffice.entity.AccountPre;
 import com.smbackoffice.exception.InsufficientFundsException;
-import org.springframework.stereotype.Component;
 
 public class PreDeductStrategy implements AccountDeductionStrategy {
 
