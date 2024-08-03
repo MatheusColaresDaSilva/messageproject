@@ -1,6 +1,7 @@
 package com.smsender.controller;
 
 import com.smsender.dto.request.ClientRequestDTO;
+import com.smsender.dto.request.ClientRequestUpdateDTO;
 import com.smsender.dto.response.ClientResponseDTO;
 import com.smsender.dto.response.ResponseDTO;
 import com.smsender.service.ClientService;
@@ -33,15 +34,15 @@ public class ClientController extends BaseController{
     }
 
     @PostMapping
-    public ResponseEntity<ResponseDTO<ClientResponseDTO>> createClient(@RequestBody ClientRequestDTO clientRequestDTO) {
+    public ResponseEntity<ResponseDTO<ClientResponseDTO>> createClientWithPlan(@RequestBody ClientRequestDTO clientRequestDTO) {
         ClientResponseDTO response = clientService.createClient(clientRequestDTO);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(new ResponseDTO<>(response));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ResponseDTO<ClientResponseDTO>> updateClient(@RequestBody ClientRequestDTO clientRequestDTO, @PathVariable Long id) {
-        ClientResponseDTO response = clientService.updateClient(clientRequestDTO, id);
+    public ResponseEntity<ResponseDTO<ClientResponseDTO>> updateClient(@RequestBody ClientRequestUpdateDTO clientRequestUpdateDTO, @PathVariable Long id) {
+        ClientResponseDTO response = clientService.updateClient(clientRequestUpdateDTO, id);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(new ResponseDTO<>(response));
     }

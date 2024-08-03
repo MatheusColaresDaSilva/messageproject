@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "CLIENT_PLAN")
+@Table(name = "CLIENTPLAN")
 public class ClientPlan {
 
     @EmbeddedId

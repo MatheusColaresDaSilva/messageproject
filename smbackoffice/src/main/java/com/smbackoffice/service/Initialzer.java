@@ -1,4 +1,4 @@
-package com.smbackoffice.controller;
+package com.smbackoffice.service;
 
 
 import com.smbackoffice.entity.AccountPos;

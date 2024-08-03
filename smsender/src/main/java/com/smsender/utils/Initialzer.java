@@ -8,20 +8,18 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Initialzer implements ApplicationRunner {
 
     private ClientRepository clientRepository;
     private PlanRepository planRepository;
     private ClientPlanRepository clientPlanRepository;
-    private TransactionRepository transactionRepository;
     private MessageRepository messageRepository;
 
-    public Initialzer(ClientRepository clientRepository, PlanRepository planRepository, ClientPlanRepository clientPlanRepository, TransactionRepository transactionRepository,MessageRepository messageRepository) {
+    public Initialzer(ClientRepository clientRepository, PlanRepository planRepository, ClientPlanRepository clientPlanRepository,MessageRepository messageRepository) {
         this.clientRepository = clientRepository;
         this.planRepository = planRepository;
         this.clientPlanRepository = clientPlanRepository;
-        this.transactionRepository = transactionRepository;
         this.messageRepository = messageRepository;
     }
 
@@ -45,11 +43,11 @@ public class Initialzer implements ApplicationRunner {
 
         // Criar e salvar planos
         Plan plan1 = new Plan();
-        plan1.setType(PlanType.POSPAGO);
+        plan1.setType(PlanType.POS);
         plan1 = planRepository.save(plan1);
 
         Plan plan2 = new Plan();
-        plan2.setType(PlanType.PREPAGO);
+        plan2.setType(PlanType.PRE);
         plan2 = planRepository.save(plan2);
 
         // Criar e salvar associações entre cliente e plano
@@ -57,7 +55,6 @@ public class Initialzer implements ApplicationRunner {
         ClientPlanId id1 = new ClientPlanId(client1, plan1);
         AccountPos account1 = new AccountPos();
         account1.setId(1L);
-        account1.setAccountNumber(123456L);
         account1.setMaximumValue(122L);
         clientPlan1.setId(id1);
         clientPlan1.setAccount(account1);
@@ -68,7 +65,6 @@ public class Initialzer implements ApplicationRunner {
         clientPlan2.setId(id2);
         AccountPre account2 = new AccountPre();
         account2.setId(1L);
-        account2.setAccountNumber(123456L);
         account2.setCreditValue(122L);
         clientPlan2.setAccount(account2);
         clientPlanRepository.save(clientPlan2);
@@ -81,12 +77,12 @@ public class Initialzer implements ApplicationRunner {
         messageRepository.save(message);
 
         // Criar e salvar transações (se aplicável)
-        Transaction transaction = new Transaction();
-        transaction.setId(1L);
-        transaction.setAccount(account1);
-        transaction.setMessage(message);
-        transaction.setMessageCost(25L);
-        transactionRepository.save(transaction);
+//        Transaction transaction = new Transaction();
+//        transaction.setId(1L);
+//        transaction.setAccount(account1);
+//        transaction.setMessage(message);
+//        transaction.setMessageCost(25L);
+//        transactionRepository.save(transaction);
     }
 
 }

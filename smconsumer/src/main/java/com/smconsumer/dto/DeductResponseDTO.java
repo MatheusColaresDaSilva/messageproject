@@ -7,7 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class WithdrawResponseDTO {
+public class DeductResponseDTO {
     private Long id;
     private String content;
     private Integer recipientPhoneNumber;

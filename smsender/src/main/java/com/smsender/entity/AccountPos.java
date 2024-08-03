@@ -13,11 +13,24 @@ import lombok.Setter;
 @Table(name = "ACCOUNTPOS")
 public class AccountPos extends Account {
 
+
     @Column(nullable = false)
     private Long maximumValue;
 
     @Override
     public PlanType accountType() {
-        return PlanType.POSPAGO;
+        return PlanType.POS;
     }
+
+    @Override
+    public Account addingInitialValue() {
+        maximumValue = 50L;
+        return this;
+    }
+
+    @Override
+    public Long getBalance() {
+        return this.maximumValue;
+    }
+
 }

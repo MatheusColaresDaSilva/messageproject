@@ -18,6 +18,17 @@ public class AccountPre extends Account {
 
     @Override
     public PlanType accountType() {
-        return PlanType.PREPAGO;
+        return PlanType.PRE;
+    }
+
+    @Override
+    public Account addingInitialValue() {
+        this.creditValue = 100L;
+        return this;
+    }
+
+    @Override
+    public Long getBalance() {
+        return this.creditValue;
     }
 }
