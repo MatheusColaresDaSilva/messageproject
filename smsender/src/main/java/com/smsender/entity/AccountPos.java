@@ -15,7 +15,10 @@ public class AccountPos extends Account {
 
 
     @Column(nullable = false)
-    private Long maximumValue;
+    private Double maximumValue;
+
+    @Column(nullable = false)
+    private Double currentValue = 0.0;
 
     @Override
     public PlanType accountType() {
@@ -24,13 +27,13 @@ public class AccountPos extends Account {
 
     @Override
     public Account addingInitialValue() {
-        maximumValue = 50L;
+        maximumValue = 50.0;
         return this;
     }
 
     @Override
-    public Long getBalance() {
-        return this.maximumValue;
+    public Double getBalance() {
+        return this.currentValue;
     }
 
 }

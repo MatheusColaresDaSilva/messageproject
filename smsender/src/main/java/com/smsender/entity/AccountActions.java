@@ -8,5 +8,5 @@ public interface AccountActions {
 
     Account addingInitialValue();
 
-    Long getBalance();
+    Double getBalance();
 }

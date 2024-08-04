@@ -75,7 +75,7 @@ public class ClientServiceIntegrationTest {
                     assertThat(cp.getAccount()).isNotNull();
                 });
 
-        assertThat(clientPlan.get().getAccount().getBalance()).isEqualTo(100L);
+        assertThat(clientPlan.get().getAccount().getBalance()).isEqualTo(100.0);
 
         Optional<ClientPlan> nonExistentClientPlan = clientPlanRepository.findClientPlanByClientIdAndPlanId(client.getId(), planRepository.findByType(PlanType.POS).get().getId());
         assertThat(nonExistentClientPlan).isEmpty();

@@ -15,6 +15,7 @@ public class AccountPos extends Account {
     @Column(nullable = false)
     private Double maximumValue;
 
+    @Column(nullable = false)
     private Double currentValue = 0.0;
 
 }

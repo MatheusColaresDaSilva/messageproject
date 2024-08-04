@@ -14,7 +14,7 @@ import lombok.Setter;
 public class AccountPre extends Account {
 
     @Column(nullable = false)
-    private Long creditValue;
+    private Double creditValue;
 
     @Override
     public PlanType accountType() {
@@ -23,12 +23,12 @@ public class AccountPre extends Account {
 
     @Override
     public Account addingInitialValue() {
-        this.creditValue = 100L;
+        this.creditValue = 100.0;
         return this;
     }
 
     @Override
-    public Long getBalance() {
+    public Double getBalance() {
         return this.creditValue;
     }
 }

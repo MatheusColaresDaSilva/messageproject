@@ -22,7 +22,7 @@ public class ClientController extends BaseController{
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResponseDTO<ClientResponseDTO>> findById(@PathVariable Long id) {
+    public ResponseEntity<ResponseDTO<ClientResponseDTO>> findById(@PathVariable("id") Long id) {
         ClientResponseDTO response = clientService.findById(id);
         return ResponseEntity.ok(new ResponseDTO<>(response));
     }
@@ -48,7 +48,7 @@ public class ClientController extends BaseController{
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Long> deleteClient(@PathVariable Long id) {
+    public ResponseEntity<Long> deleteClient(@PathVariable("id") Long id) {
         clientService.deleteClient(id);
         return new ResponseEntity<>(id, HttpStatus.OK);
     }
