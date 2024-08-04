@@ -1,0 +1,86 @@
+version: '3.9'
+
+services:
+  smsender:
+    build:
+      context: ./smsender
+      dockerfile: Dockerfile
+    image: smsender:latest
+    container_name: smsender
+    environment:
+      - SPRING_PROFILES_ACTIVE=container
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://dbpostgres:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=123
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_RABBITMQ_USERNAME=guest
+      - SPRING_RABBITMQ_PASSWORD=guest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - dbpostgres
+      - rabbitmq
+    networks:
+      - messageproject-network
+
+  smconsumer:
+    build:
+      context: ./smconsumer
+      dockerfile: Dockerfile
+    image: smconsumer:latest
+    container_name: smconsumer
+    environment:
+      - SPRING_PROFILES_ACTIVE=container
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_RABBITMQ_USERNAME=guest
+      - SPRING_RABBITMQ_PASSWORD=guest
+    ports:
+      - "8081:8081"
+    depends_on:
+      - rabbitmq
+    networks:
+      - messageproject-network
+
+  smbackoffice:
+    build:
+      context: ./smbackoffice
+      dockerfile: Dockerfile
+    image: smbackoffice:latest
+    container_name: smbackoffice
+    environment:
+      - SPRING_PROFILES_ACTIVE=container
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://dbpostgres:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=123
+    ports:
+      - "8082:8082"
+    depends_on:
+      - dbpostgres
+    networks:
+      - messageproject-network
+
+  dbpostgres:
+    image: postgres:latest
+    container_name: dbpostgres
+    environment:
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - messageproject-network
+
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - messageproject-network
+
+networks:
+  messageproject-network:
+    driver: bridge
