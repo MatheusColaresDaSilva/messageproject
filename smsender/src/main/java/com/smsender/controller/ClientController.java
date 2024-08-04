@@ -41,7 +41,7 @@ public class ClientController extends BaseController{
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ResponseDTO<ClientResponseDTO>> updateClient(@RequestBody ClientRequestUpdateDTO clientRequestUpdateDTO, @PathVariable Long id) {
+    public ResponseEntity<ResponseDTO<ClientResponseDTO>> updateClient(@RequestBody ClientRequestUpdateDTO clientRequestUpdateDTO, @PathVariable("id") Long id) {
         ClientResponseDTO response = clientService.updateClient(clientRequestUpdateDTO, id);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(new ResponseDTO<>(response));

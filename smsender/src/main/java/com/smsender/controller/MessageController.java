@@ -21,7 +21,7 @@ public class MessageController extends BaseController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ResponseDTO<MessageResponseDTO>> findById(@PathVariable Long id) {
+    public ResponseEntity<ResponseDTO<MessageResponseDTO>> findById(@PathVariable("id") Long id) {
         MessageResponseDTO response = messageService.findById(id);
         return ResponseEntity.ok(new ResponseDTO<>(response));
     }
