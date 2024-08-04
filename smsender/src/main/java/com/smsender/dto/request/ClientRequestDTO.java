@@ -15,7 +15,7 @@ public class ClientRequestDTO {
     @NotNull(message = "Must have a cpf")
     private String cpf;
     @NotNull(message = "Must have a phonenumber")
-    private Integer phoneNumber;
+    private Long phoneNumber;
     @NotNull(message = "Must have a cnpj")
     private String cnpj;
     @NotNull(message = "Must have a company name")

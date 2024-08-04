@@ -25,7 +25,7 @@ public class Client extends BaseEntity {
     private String cpf;
 
     @Column(nullable = false)
-    private Integer phoneNumber;
+    private Long phoneNumber;
 
     @Column(length = 14, nullable = false)
     private String cnpj;

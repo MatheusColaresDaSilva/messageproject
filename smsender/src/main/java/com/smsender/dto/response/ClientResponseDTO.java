@@ -14,7 +14,7 @@ public class ClientResponseDTO {
     private Long id;
     private String name;
     private String cpf;
-    private Integer phoneNumber;
+    private Long phoneNumber;
     private String cnpj;
     private String companyName;
 }

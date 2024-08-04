@@ -10,7 +10,7 @@ import lombok.*;
 public class ClientRequestUpdateDTO {
     private String name;
     private String cpf;
-    private Integer phoneNumber;
+    private Long phoneNumber;
     private String cnpj;
     private String companyName;
 }

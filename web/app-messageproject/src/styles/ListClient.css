@@ -1,0 +1,46 @@
+.data-table {
+    min-width: 50rem;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+.data-table th, .data-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.data-table thead tr {
+    background-color: #4cf966;
+    color: #161616;
+    text-align: center;
+    font-weight: bold;
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid #4cf966;
+}
+
+.data-table tbody tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+}
+
+.data-table tbody tr:last-of-type {
+    border-bottom: 2px solid #006954;
+}
+
+.data-table tbody tr:hover {
+    background-color: #4fed86;
+}
+
+.p-paginator {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+    margin: 0 20px;  
+    cursor: pointer;
+}

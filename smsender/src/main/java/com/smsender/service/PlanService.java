@@ -5,7 +5,14 @@ import com.smsender.enums.PlanType;
 import com.smsender.exception.PlanNotFoundException;
 import com.smsender.repository.ClientPlanRepository;
 import com.smsender.repository.PlanRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+import static com.smsender.converter.ClientConverter.clientEntityToDto;
 
 @Service
 public class PlanService {
@@ -22,6 +29,14 @@ public class PlanService {
 
     public Plan getPlanByType(PlanType type) {
         return planRepository.findByType(type).orElseThrow(() -> new PlanNotFoundException());
+    }
+
+    public Plan getPlanById(Long id) {
+        return planRepository.findById(id).orElseThrow(() -> new PlanNotFoundException());
+    }
+
+    public List<Plan> getAllPlans() {
+        return planRepository.findAll();
     }
 
     public ClientPlan createNewClientPlan(Client client, PlanType planType) {

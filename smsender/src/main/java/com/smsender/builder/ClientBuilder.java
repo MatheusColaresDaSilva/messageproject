@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 public class ClientBuilder {
     private String name;
     private String cpf;
-    private Integer phoneNumber;
+    private Long phoneNumber;
     private String cnpj;
     private String companyName;
 
@@ -23,7 +23,7 @@ public class ClientBuilder {
         return this;
     }
 
-    public ClientBuilder phoneNumber(Integer phoneNumber) {
+    public ClientBuilder phoneNumber(Long phoneNumber) {
         this.phoneNumber = phoneNumber;
         return this;
     }
