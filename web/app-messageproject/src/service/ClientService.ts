@@ -11,11 +11,11 @@ type Client = {
 };
 
 async function createNewClient(client: Client): Promise<Client | null> {
-  return await axios.post(Config.baseUrl + "/client", client);
+  return await axios.post(`${Config.baseUrl}/client`, client);
 }
 
 async function findAllClients(page: number, size: number ): Promise<AxiosResponse> {
-  return await axios.get(Config.baseUrl + "/client", {
+  return await axios.get(`${Config.baseUrl}/client`, {
     params: {
       page: page,
       size: size 
