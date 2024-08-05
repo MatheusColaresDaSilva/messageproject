@@ -76,3 +76,6 @@ Esse comando irá construir as imagens dos projetos e levantar os containers de 
 - Liquibase para controle e gerenciamento do banco.
 - Eureka Server para atuar junto com o FeignClient quando houver mais serviços.
 - Kubernetes para gerenciar melhor os containers.
+
+### Postman Collection
+O projeto também inclui um arquivo de coleção do Postman que pode ser utilizado para testar os endpoints. O arquivo está localizado em `path/to/your/postman-collection.json`.
