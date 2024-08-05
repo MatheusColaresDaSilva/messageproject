@@ -65,6 +65,11 @@ Esse comando irá construir as imagens dos projetos e levantar os containers de 
 
 ### O que falta
 - Ações do backoffice.
+  - Incluir creditos para um cliente
+  - Consultar saldo de um cliente
+  - Alterar limite de um cliente
+  - Alterar plano de um cliente
+  - Ver dados de um cliente
 - Mais telas no frontend.
 
 ### Tecnologias Futuras
