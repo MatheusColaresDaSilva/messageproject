@@ -1,6 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-
-const BASE_URL = 'http://localhost:8080/api/v1/client';
+import Config from './config'
 
 type Client = {
   id?: number;
@@ -12,11 +11,11 @@ type Client = {
 };
 
 async function createNewClient(client: Client): Promise<Client | null> {
-  return await axios.post(BASE_URL, client);
+  return await axios.post(Config.baseUrl + "/client", client);
 }
 
 async function findAllClients(page: number, size: number ): Promise<AxiosResponse> {
-  return await axios.get(BASE_URL, {
+  return await axios.get(Config.baseUrl + "/client", {
     params: {
       page: page,
       size: size 

@@ -52,7 +52,7 @@ public class ClientServiceIntegrationTest {
         ClientRequestDTO requestDTO = new ClientRequestDTO();
         requestDTO.setCpf("60906360455");
         requestDTO.setName("John");
-        requestDTO.setPhoneNumber(4564);
+        requestDTO.setPhoneNumber(4564L);
         requestDTO.setCompanyName("qwer");
         requestDTO.setCnpj("01222244");
         requestDTO.setPlanType(PlanType.PRE);

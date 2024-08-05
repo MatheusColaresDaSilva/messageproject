@@ -6,15 +6,6 @@ import ClientService from '../service/ClientService';
 import PlanService from '../service/PlanService';
 import InputMask from 'react-input-mask';
 
-interface Client {
-  name: string;
-  cpf: string;
-  phoneNumber: string;
-  cnpj: string;
-  companyName: string;
-  planType: string;
-}
-
 interface ClientFormValues {
   name: string;
   cpf: string;

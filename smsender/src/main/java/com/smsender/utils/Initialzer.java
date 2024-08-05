@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Component()
-@Profile("local")
+@Profile("!test")
 public class Initialzer implements ApplicationRunner {
 
     private PlanRepository planRepository;
@@ -31,13 +31,13 @@ public class Initialzer implements ApplicationRunner {
             plan1.setType(PlanType.POS);
             planRepository.save(plan1);
         }
-        Optional<Plan> pre = planRepository.findByType(PlanType.POS);
+        Optional<Plan> pre = planRepository.findByType(PlanType.PRE);
         if(!pre.isPresent()) {
             Plan plan2 = new Plan();
             plan2.setType(PlanType.PRE);
             planRepository.save(plan2);
         }
-        
+
     }
 
 }

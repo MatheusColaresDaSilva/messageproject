@@ -1,9 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
-
-const BASE_URL = 'http://localhost:8080/api/v1/plan';
+import Config from './config'
 
 async function findAllPlans(): Promise<AxiosResponse> {
-  return await axios.get(BASE_URL);
+  return await axios.get(Config.baseUrl + "/plan");
 }
 
 
