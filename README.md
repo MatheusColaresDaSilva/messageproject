@@ -41,12 +41,16 @@ Este projeto foi projetado em arquitetura de microserviço e está dividido em t
 
 ## Instruções para Execução
 
-O projeto possui arquivos Dockerfile e docker-compose.yml. Dentro do projeto raiz, execute o comando:
+O projeto possui arquivos Dockerfile e docker-compose.yml. Dentro do projeto raiz `messageproject`, execute o comando:
+
+ ```sh
+ mvn clean install
+```
+E logo em seguida:
 
 ```sh
 docker-compose up --build
 ```
-
 Esse comando irá construir as imagens dos projetos e levantar os containers de todos os serviços necessários.
 
 ### URLs dos Serviços
