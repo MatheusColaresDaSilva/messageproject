@@ -77,5 +77,30 @@ Esse comando irá construir as imagens dos projetos e levantar os containers de 
 - Eureka Server para atuar junto com o FeignClient quando houver mais serviços.
 - Kubernetes para gerenciar melhor os containers.
 
+### Executando os Projetos Manualmente
+
+Para executar os projetos manualmente, siga estas etapas:
+
+1. **Crie os containers necessários:**
+
+   - Para o RabbitMQ:
+     ```sh
+     docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13-management
+     ```
+
+   - Para o PostgreSQL:
+     ```sh
+     docker run --name dbpostgres -e POSTGRES_PASSWORD=123 -d -p 5432:5432 postgres
+     ```
+
+2. **Suba os projetos:**
+
+   - Execute as classes principais de cada projeto Java (`smsender`, `smconsumer`, `smbackoffice`).
+
+   - Para iniciar o projeto React, navegue até a raiz do projeto web e execute:
+     ```sh
+     npm start
+     ```
+     
 ### Postman Collection
 O projeto também inclui um arquivo de coleção do Postman que pode ser utilizado para testar os endpoints. O arquivo está localizado em `messageproject/SMSender.postman_collection.json`.
