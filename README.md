@@ -45,7 +45,7 @@ O projeto possui arquivos Dockerfile e docker-compose.yml. Dentro do projeto rai
 
 ```sh
 docker-compose up --build
-
+```
 
 Esse comando irá construir as imagens dos projetos e levantar os containers de todos os serviços necessários.
 
