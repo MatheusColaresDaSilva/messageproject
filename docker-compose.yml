@@ -73,6 +73,8 @@ services:
       - smsender
     environment:
       - REACT_APP_BASE_URL=http://smsender:8080/api/v1
+    networks:
+      - messageproject-network
 
   dbpostgres:
     image: postgres:latest
