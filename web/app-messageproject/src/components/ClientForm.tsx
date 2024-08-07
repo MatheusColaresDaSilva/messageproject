@@ -26,7 +26,7 @@ const validationSchema = Yup.object({
   phoneNumber: Yup.string().required('Phone number is required'),
   cnpj: Yup.string().required('CNPJ is required'),
   companyName: Yup.string().required('Company name is required'),
-  plan: Yup.string().required('Plan is required')
+  planType: Yup.string().required('Plan is required')
 });
 
 const ClientForm: React.FC = () => {
@@ -53,6 +53,7 @@ const ClientForm: React.FC = () => {
   }, []);
   
   const createNewClient = (value: ClientFormValues) => {
+    console.log("nois")
     return ClientService.createNewClient(value)
       .then((response: any) => {
         alert('New Client added');
@@ -72,7 +73,7 @@ const ClientForm: React.FC = () => {
       validationSchema={validationSchema}
       onSubmit={(values, { setSubmitting, resetForm }) => {
 
-
+console.log("noissss")
         const processedValues = {
           ...values,
           cpf: removeMask(values.cpf),
